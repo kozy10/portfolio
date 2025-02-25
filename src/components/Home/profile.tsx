@@ -39,7 +39,10 @@ export function Profile() {
       const isAtBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - 100
       if (isAtBottom) {
         // If at the bottom, activate the last section (Project)
-        sections[sections.length - 1]
+        const lastSection = sections[sections.length - 1]
+        if (lastSection) {
+          setActiveSection(lastSection)
+        }
         return
       }
 
