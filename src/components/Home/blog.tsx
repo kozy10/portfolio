@@ -1,24 +1,19 @@
 import React from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 import { format } from 'date-fns'
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Section } from './shared/section'
+import { getPayload } from 'payload'
+import configPromise from '@payload-config'
+import { Media } from '../Media'
 
 // Mock data for featured articles
 // In a real application, this would come from an API or CMS
 const featuredArticles = [
   {
     id: 1,
-    title: 'Getting Started with Next.js',
+    title: 'W',
     slug: 'getting-started-with-nextjs',
     description: 'Learn how to build modern web applications with Next.js, React, and TypeScript.',
     publishedAt: '2023-05-15T09:00:00Z',
@@ -52,37 +47,53 @@ const featuredArticles = [
   },
 ]
 
-const Blog: React.FC = () => {
+export default async function Blog() {
+  const payload = await getPayload({ config: configPromise })
+
+  const posts = await payload.find({
+    collection: 'posts',
+    depth: 1,
+    limit: 12,
+    overrideAccess: false,
+    select: {
+      title: true,
+      slug: true,
+      categories: true,
+      meta: true,
+      publishedAt: true,
+    },
+  })
   return (
     <Section title="Article">
       <div className="space-y-8">
         <div className="flex flex-col space-y-6 max-w-2xl mx-auto">
-          {featuredArticles.map((article) => (
+          {posts.docs.map((post) => (
             <Link
-              href={`/posts/${article.slug}`}
-              key={article.id}
+              href={`/posts/${post.slug}`}
+              key={post.id}
               className="block transform transition-all duration-300 hover:scale-[1.02]"
             >
               <Card className="flex flex-row hover:shadow-sm transition-shadow duration-300 cursor-pointer border-2 border-transparent bg-neutral-100">
                 <div className="p-6">
                   <div className="relative h-40 w-40 sm:w-48 flex-shrink-0 overflow-hidden">
-                    <Image
-                      src={article.heroImage.url}
+                    {/* <Image
+                      src={post.meta?.image}
                       alt={article.heroImage.alt}
                       fill
                       className="object-cover"
-                    />
+                    /> */}
+                    <Media resource={post.meta?.image} />
                   </div>
                 </div>
                 <div className="flex flex-col flex-grow">
                   <CardHeader>
-                    <CardTitle className="text-xl">{article.title}</CardTitle>
+                    <CardTitle className="text-xl">{post.title}</CardTitle>
                     <CardDescription className="text-sm text-gray-500">
-                      {format(new Date(article.publishedAt), 'MMMM d, yyyy')}
+                      {format(new Date(post.publishedAt || ''), 'MMMM d, yyyy')}
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-gray-700 line-clamp-2">{article.description}</p>
+                    <p className="text-gray-700 line-clamp-2">{post.meta?.description}</p>
                   </CardContent>
                 </div>
               </Card>
@@ -98,5 +109,3 @@ const Blog: React.FC = () => {
     </Section>
   )
 }
-
-export default Blog
