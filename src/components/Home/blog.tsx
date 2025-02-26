@@ -11,6 +11,7 @@ import {
   CardTitle,
 } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
+import { Section } from './shared/section'
 
 // Mock data for featured articles
 // In a real application, this would come from an API or CMS
@@ -53,58 +54,48 @@ const featuredArticles = [
 
 const Blog: React.FC = () => {
   return (
-    <section className="py-16 bg-gray-50">
-      <div className="container mx-auto px-4">
-        <div className="mb-12 text-center">
-          <h2 className="text-3xl font-bold mb-4">Featured Articles</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Explore my latest thoughts, tutorials, and insights on web development, design, and
-            technology.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <Section title="Article">
+      <div className="space-y-8">
+        <div className="flex flex-col space-y-6 max-w-2xl mx-auto">
           {featuredArticles.map((article) => (
-            <Card
+            <Link
+              href={`/posts/${article.slug}`}
               key={article.id}
-              className="h-full flex flex-col hover:shadow-lg transition-shadow duration-300"
+              className="block transform transition-all duration-300 hover:scale-[1.02]"
             >
-              <div className="relative h-48 w-full overflow-hidden rounded-t-lg">
-                <Image
-                  src={article.heroImage.url}
-                  alt={article.heroImage.alt}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                />
-              </div>
-              <CardHeader className="flex-grow">
-                <CardTitle className="text-xl">{article.title}</CardTitle>
-                <CardDescription className="text-sm text-gray-500">
-                  {format(new Date(article.publishedAt), 'MMMM d, yyyy')}
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-700 line-clamp-3">{article.description}</p>
-              </CardContent>
-              <CardFooter>
-                <Link href={`/posts/${article.slug}`} passHref>
-                  <Button variant="outline" className="w-full">
-                    Read Article
-                  </Button>
-                </Link>
-              </CardFooter>
-            </Card>
+              <Card className="flex flex-row hover:shadow-sm transition-shadow duration-300 cursor-pointer border-2 border-transparent bg-neutral-100">
+                <div className="p-6">
+                  <div className="relative h-40 w-40 sm:w-48 flex-shrink-0 overflow-hidden">
+                    <Image
+                      src={article.heroImage.url}
+                      alt={article.heroImage.alt}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                </div>
+                <div className="flex flex-col flex-grow">
+                  <CardHeader>
+                    <CardTitle className="text-xl">{article.title}</CardTitle>
+                    <CardDescription className="text-sm text-gray-500">
+                      {format(new Date(article.publishedAt), 'MMMM d, yyyy')}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-gray-700 line-clamp-2">{article.description}</p>
+                  </CardContent>
+                </div>
+              </Card>
+            </Link>
           ))}
         </div>
-
-        <div className="mt-12 text-center">
+        <div className="">
           <Link href="/posts" passHref>
-            <Button variant="default">View All Articles</Button>
+            <Button variant="outline">View All Articles</Button>
           </Link>
         </div>
       </div>
-    </section>
+    </Section>
   )
 }
 

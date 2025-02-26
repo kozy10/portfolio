@@ -8,7 +8,7 @@ interface SectionProps {
 
 export function Section({ title, children, className }: SectionProps) {
   return (
-    <section className={cn('space-y-4', className)}>
+    <section className={cn('space-y-6', className)}>
       <h2 className="text-2xl font-bold">{title}</h2>
       {children}
     </section>

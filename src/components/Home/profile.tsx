@@ -19,6 +19,7 @@ const MENU_ITEMS: MenuItem[] = [
   { id: 'skill', label: 'Skill' },
   { id: 'experience', label: 'Experience' },
   { id: 'project', label: 'Project' },
+  { id: 'article', label: 'Article' },
 ]
 
 export function Profile() {
@@ -38,7 +39,7 @@ export function Profile() {
       // Check if we're at the bottom of the page
       const isAtBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - 100
       if (isAtBottom) {
-        // If at the bottom, activate the last section (Project)
+        // If at the bottom, activate the last section
         const lastSection = sections[sections.length - 1]
         if (lastSection) {
           setActiveSection(lastSection)
