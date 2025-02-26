@@ -116,6 +116,7 @@ const config = {
               h1: {
                 fontWeight: 'normal',
                 marginBottom: '0.25em',
+                fontWeight: 600,
               },
             },
           ],
@@ -125,10 +126,11 @@ const config = {
             {
               h1: {
                 fontSize: '2.5rem',
+                fontWeight: 600,
               },
               h2: {
                 fontSize: '1.25rem',
-                fontWeight: 600,
+                fontWeight: 500,
               },
             },
           ],
@@ -138,9 +140,11 @@ const config = {
             {
               h1: {
                 fontSize: '3.5rem',
+                fontWeight: 600,
               },
               h2: {
                 fontSize: '1.5rem',
+                fontWeight: 500,
               },
             },
           ],
