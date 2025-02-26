@@ -1,12 +1,12 @@
-import { Profile } from '@/components/Home/profile'
-import { About } from '@/components/Home/about'
-import { Skill } from '@/components/Home/skill'
-import { Header } from '@/components/Home/shared/header'
-import Experience from '@/components/Home/experience'
-import { Project } from '@/components/Home/project'
-import Blog from '@/components/Home/blog'
+import { Profile } from '@/components/Custom/profile'
+import { About } from '@/components/Custom/about'
+import { Skill } from '@/components/Custom/skill'
+import { Header } from '@/components/Custom/shared/header'
+import Experience from '@/components/Custom/experience'
+import { Project } from '@/components/Custom/project'
+import Blog from '@/components/Custom/blog'
 
-export default function Home() {
+export default function Page() {
   return (
     <>
       {/* Header is only visible on screens smaller than lg */}
