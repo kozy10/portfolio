@@ -29,7 +29,7 @@ const projects: ProjectProps[] = [
 
 function ProjectCard({ title, description, image, tags, link }: ProjectProps) {
   return (
-    <Card className="flex flex-col overflow-hidden border-none md:flex-row">
+    <Card className="flex flex-col overflow-hidden border-none md:flex-row rounded-2xl">
       <div className="flex w-1/2 flex-col justify-between p-6">
         <div>
           <CardHeader className="p-0">
