@@ -53,7 +53,7 @@ export default async function Blog() {
   const posts = await payload.find({
     collection: 'posts',
     depth: 1,
-    limit: 12,
+    limit: 3,
     overrideAccess: false,
     select: {
       title: true,
@@ -66,45 +66,36 @@ export default async function Blog() {
   return (
     <Section title="Article">
       <div className="space-y-8">
-        <div className="flex flex-col space-y-6 max-w-2xl mx-auto">
+        <div className="flex flex-col gap-4">
           {posts.docs.map((post) => (
             <Link
               href={`/posts/${post.slug}`}
               key={post.id}
-              className="block transform transition-all duration-300 hover:scale-[1.02]"
+              className="block w-fulltransform transition-all duration-300 hover:scale-[1.02]"
             >
-              <Card className="flex flex-row hover:shadow-sm transition-shadow duration-300 cursor-pointer border-2 border-transparent bg-neutral-100">
-                <div className="p-6">
-                  <div className="relative h-40 w-40 sm:w-48 flex-shrink-0 overflow-hidden">
-                    {/* <Image
-                      src={post.meta?.image}
-                      alt={article.heroImage.alt}
-                      fill
-                      className="object-cover"
-                    /> */}
-                    <Media resource={post.meta?.image} />
-                  </div>
-                </div>
-                <div className="flex flex-col flex-grow">
+              <Card className="flex h-full hover:shadow-md transition-shadow duration-300 cursor-pointer">
+                <div className="flex flex-grow">
                   <CardHeader>
+                    <div className="relative w-40 aspect-video flex-shrink-0 overflow-hidden rounded-md">
+                      <Media resource={post.meta?.image} />
+                    </div>
+                  </CardHeader>
+                  <div className="flex flex-col flex-grow py-6 pr-6">
                     <CardTitle className="text-xl">{post.title}</CardTitle>
                     <CardDescription className="text-sm text-gray-500">
                       {format(new Date(post.publishedAt || ''), 'MMMM d, yyyy')}
                     </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-gray-700 line-clamp-2">{post.meta?.description}</p>
-                  </CardContent>
+                  </div>
                 </div>
               </Card>
             </Link>
           ))}
         </div>
-        <div className="">
+        {posts.docs.length > 3 && (
           <Link href="/posts" passHref>
             <Button variant="outline">View All Articles</Button>
           </Link>
-        </div>
+        )}
       </div>
     </Section>
   )

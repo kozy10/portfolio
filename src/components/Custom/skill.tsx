@@ -61,11 +61,13 @@ interface SkillIconProps {
 
 function SkillIcon({ icon: Icon, name, color, className }: SkillIconProps) {
   return (
-    <div className="flex w-24 flex-col items-center">
-      <div className={cn('w-14 h-14 flex items-center justify-center rounded-xl', className)}>
-        <Icon size={32} color={color} />
+    <div className="flex w-20 flex-col items-center gap-2">
+      <div className="bg-neutral-50 rounded-xl p-2">
+        <div className={cn('w-12 h-12 flex items-center justify-center rounded-xl', className)}>
+          <Icon size={32} color={color} />
+        </div>
       </div>
-      <span className="text-sm text-neutral-600">{name}</span>
+      <span className="text-xs text-neutral-600">{name}</span>
     </div>
   )
 }
@@ -79,7 +81,7 @@ function SkillGroup({ title, skills }: SkillGroupProps) {
   return (
     <div className="space-y-2">
       <h3 className="text-base font-semibold text-neutral-900">{title}</h3>
-      <div className="flex flex-wrap">
+      <div className="flex flex-wrap gap-2">
         {skills.map((skill) => (
           <SkillIcon key={skill.name} icon={skill.icon} name={skill.name} color={skill.color} />
         ))}

@@ -6,6 +6,7 @@ import { Section } from './shared/section'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
+import { GithubIcon } from 'lucide-react'
 
 interface ProjectProps {
   title: string
@@ -13,29 +14,35 @@ interface ProjectProps {
   image: string
   tags: string[]
   link?: string
+  githubLink?: string
 }
 
 const projects: ProjectProps[] = [
   {
     title: 'Wordist',
-    description:
-      'An AI-powered English vocabulary learning service that brings words to life with vivid imagery, making them more memorable',
+    description: 'An AI-powered vocabulary app with visual learning',
     image: '/wordist_page.png',
-    tags: ['Next.js'],
-    link: 'https://wordist.example.com',
+    tags: ['Next.js App Router', 'Gemini', 'Workers AI'],
+    link: 'https://wordist.net',
   },
-  // Add more projects here as needed
+  {
+    title: 'Portfolio',
+    description: 'Self-hosted, fully open-source portfolio site',
+    image: '/portfolio_screen.png',
+    tags: ['Next.js', 'Payload CMS'],
+    githubLink: 'https://github.com/kozy10/portfolio',
+  },
 ]
 
-function ProjectCard({ title, description, image, tags, link }: ProjectProps) {
+function ProjectCard({ title, description, image, tags, link, githubLink }: ProjectProps) {
   return (
-    <Card className="flex flex-col overflow-hidden border-none md:flex-row rounded-2xl">
-      <div className="flex w-1/2 flex-col justify-between p-6">
+    <Card className="flex flex-col overflow-hidden md:flex-row rounded-2xl">
+      <div className="flex w-3/5 flex-col justify-between p-6">
         <div>
           <CardHeader className="p-0">
             <h3 className="text-2xl font-bold">{title}</h3>
           </CardHeader>
-          <CardContent className="mt-4 p-0">
+          <CardContent className="mt-2 p-0">
             <p className="text-neutral-600">{description}</p>
             <div className="mt-4 flex flex-wrap gap-2">
               {tags.map((tag) => (
@@ -52,9 +59,16 @@ function ProjectCard({ title, description, image, tags, link }: ProjectProps) {
               <Button variant="outline">Visit Website</Button>
             </Link>
           )}
+          {githubLink && (
+            <Link href={githubLink} target="_blank">
+              <Button variant="outline">
+                <GithubIcon />
+              </Button>
+            </Link>
+          )}
         </CardFooter>
       </div>
-      <div className="flex w-1/2 justify-center bg-neutral-100 p-6">
+      <div className="flex w-2/5 justify-center bg-neutral-100 p-6">
         <div className="relative aspect-square w-full">
           <Image src={image} alt={title} fill className="rounded-xl object-contain shadow" />
         </div>

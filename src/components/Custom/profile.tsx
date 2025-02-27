@@ -97,7 +97,7 @@ export function Profile() {
   const isActive = (section: string) => activeSection === section
 
   return (
-    <Card className="relative flex w-72 flex-col gap-8 p-6">
+    <Card className="relative flex w-72 flex-col gap-4 p-6">
       <div
         onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
         className="absolute right-2 top-2 flex size-8 cursor-pointer items-center justify-center"
@@ -115,46 +115,29 @@ export function Profile() {
 
       <div className="flex flex-col pt-4">
         <h1 className="text-3xl font-bold">Kentaro Kojima</h1>
-        <p className="text-lg text-neutral-600">Full-Stack Engineer</p>
+        <p className="text-xl text-neutral-700">Full-Stack Engineer</p>
       </div>
 
-      <div className="w-full space-y-2">
-        <div className="flex items-center gap-2 text-neutral-600">
-          <svg viewBox="0 0 24 24" fill="none" className="size-5" stroke="currentColor">
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-            />
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-            />
-          </svg>
-          Vancouver, Canada
-        </div>
-
-        <div className="flex items-center gap-2 text-neutral-600">
-          <svg viewBox="0 0 24 24" fill="none" className="size-5" stroke="currentColor">
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-            />
-          </svg>
-          <span>xxxxxx.gmail.com</span>
-          <Button variant="ghost" size="icon" className="size-5">
-            <CopyIcon className="size-4" />
-          </Button>
-        </div>
+      <div className="flex items-center gap-2 text-neutral-600">
+        <svg viewBox="0 0 24 24" fill="none" className="size-5" stroke="currentColor">
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+          />
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+          />
+        </svg>
+        Vancouver, Canada
       </div>
 
       <div className="flex items-center justify-between">
-        <div className="flex gap-4">
+        <div className="flex gap-2">
           <Link href="https://github.com" target="_blank">
             <GithubIcon className="size-6 text-neutral-600 hover:text-neutral-900" />
           </Link>
@@ -164,9 +147,9 @@ export function Profile() {
         </div>
       </div>
 
-      <Button className="w-full">See Resume</Button>
+      <Button className="w-full mt-6">See Resume</Button>
 
-      <div className="w-full space-y-4">
+      <div className="w-full space-y-4 pt-8">
         <div className="space-y-4">
           {MENU_ITEMS.map((item) => (
             <div key={item.id} className="flex items-center gap-3">

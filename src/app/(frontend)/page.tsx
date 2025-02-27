@@ -19,7 +19,7 @@ export default function Page() {
           <Profile />
         </div>
 
-        <div className="max-w-3xl flex-1 space-y-16 px-4 py-8">
+        <div className="max-w-3xl flex-1 space-y-16 px-4 py-8 md:px-8">
           <div id="about" className="scroll-mt-8">
             <About />
           </div>
