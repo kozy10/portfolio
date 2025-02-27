@@ -19,7 +19,7 @@ const MENU_ITEMS: MenuItem[] = [
   { id: 'skill', label: 'Skill' },
   { id: 'experience', label: 'Experience' },
   { id: 'project', label: 'Project' },
-  { id: 'article', label: 'Article' },
+  { id: 'blog', label: 'Article' },
 ]
 
 export function Profile() {

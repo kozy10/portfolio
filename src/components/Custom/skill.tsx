@@ -16,6 +16,7 @@ import {
   SiTerraform,
   SiAlgolia,
   IconType,
+  SiFigma,
 } from '@icons-pack/react-simple-icons'
 
 import { Section } from '@/components/Custom/shared/section'
@@ -28,13 +29,12 @@ interface SkillData {
 }
 
 const languageSkills: SkillData[] = [
-  { icon: SiJavascript, name: 'Javascript', color: '#F7DF1E' },
   { icon: SiTypescript, name: 'Typescript', color: '#3178C6' },
   { icon: SiReact, name: 'React', color: '#61DAFB' },
   { icon: SiNextdotjs, name: 'Next.js' },
   { icon: SiAngular, name: 'Angular.js', color: '#DD0031' },
-  { icon: SiNodedotjs, name: 'Node.js', color: '#339933' },
   { icon: SiGo, name: 'Go', color: '#00ADD8' },
+  { icon: SiNodedotjs, name: 'Node.js', color: '#339933' },
 ]
 
 const dbSkills: SkillData[] = [
@@ -50,6 +50,7 @@ const otherSkills: SkillData[] = [
   { icon: SiGraphql, name: 'GraphQL', color: '#E10098' },
   { icon: SiTerraform, name: 'Terraform', color: '#844FBA' },
   { icon: SiAlgolia, name: 'Algolia', color: '#5468FF' },
+  { icon: SiFigma, name: 'Figma', color: '#F24E1E' },
 ]
 
 interface SkillIconProps {

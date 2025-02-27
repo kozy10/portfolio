@@ -71,7 +71,7 @@ export default function Experience() {
           <p className="mb-2 mt-1 text-sm text-neutral-600">{`Listed on the Tokyo Stock Exchange's Prime Market, holds the largest share of Japan's digital content distribution market`}</p>
         </div>
         {experiences.map((exp, index) => (
-          <div key={index} className="">
+          <div key={index}>
             <Accordion type="single" collapsible>
               <AccordionItem value={`item-${index}`}>
                 <AccordionTrigger className="flex justify-between">
