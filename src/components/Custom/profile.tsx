@@ -147,7 +147,12 @@ export function Profile() {
         </div>
       </div>
 
-      <Button className="w-full mt-6">See Resume</Button>
+      <Link
+        href="https://drive.google.com/file/d/1V1Zs3AuhLU5h526J_K1YIm05AkRVAm3j/view?usp=sharing"
+        target="_blank"
+      >
+        <Button className="w-full mt-6">See Resume</Button>
+      </Link>
 
       <div className="w-full space-y-4 pt-8">
         <div className="space-y-4">
