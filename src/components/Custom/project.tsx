@@ -36,8 +36,13 @@ const projects: ProjectProps[] = [
 
 function ProjectCard({ title, description, image, tags, link, githubLink }: ProjectProps) {
   return (
-    <Card className="flex flex-col overflow-hidden md:flex-row rounded-2xl">
-      <div className="flex w-3/5 flex-col justify-between p-6">
+    <Card className="flex flex-col overflow-hidden rounded-2xl md:flex-row">
+      <div className="flex w-full justify-center bg-muted p-6 md:w-2/5">
+        <div className="relative aspect-square w-full max-w-[180px] sm:max-w-[220px] md:max-w-none">
+          <Image src={image} alt={title} fill className="rounded-xl object-contain shadow" />
+        </div>
+      </div>
+      <div className="flex w-full flex-col justify-between p-6 md:w-3/5">
         <div>
           <CardHeader className="p-0">
             <h3 className="text-2xl font-bold">{title}</h3>
@@ -67,11 +72,6 @@ function ProjectCard({ title, description, image, tags, link, githubLink }: Proj
             </Link>
           )}
         </CardFooter>
-      </div>
-      <div className="flex w-2/5 justify-center bg-muted p-6">
-        <div className="relative aspect-square w-full">
-          <Image src={image} alt={title} fill className="rounded-xl object-contain shadow" />
-        </div>
       </div>
     </Card>
   )
