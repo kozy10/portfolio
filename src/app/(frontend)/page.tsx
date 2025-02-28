@@ -45,19 +45,19 @@ export default function Page() {
         </div>
 
         <div className="max-w-3xl flex-1 space-y-16 px-4 py-8 md:px-8">
-          <div id="about" className="scroll-mt-8">
+          <div id="about" className="lg:scroll-mt-8 scroll-mt-20">
             <About />
           </div>
-          <div id="skill" className="scroll-mt-8">
+          <div id="skill" className="lg:scroll-mt-8 scroll-mt-20">
             <Skill />
           </div>
-          <div id="experience" className="scroll-mt-8">
+          <div id="experience" className="lg:scroll-mt-8 scroll-mt-20">
             <Experience />
           </div>
-          <div id="project" className="scroll-mt-8">
+          <div id="project" className="lg:scroll-mt-8 scroll-mt-20">
             <Project />
           </div>
-          <div id="blog" className="scroll-mt-8">
+          <div id="blog" className="lg:scroll-mt-8 scroll-mt-20">
             <Blog />
           </div>
         </div>
