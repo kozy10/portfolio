@@ -104,21 +104,21 @@ export function Profile() {
       >
         <Sun
           size={24}
-          className="absolute rotate-0 scale-0 text-neutral-600 transition-all dark:rotate-0 dark:scale-100"
+          className="absolute rotate-0 scale-0 text-muted-foreground transition-all dark:rotate-0 dark:scale-100"
         />
         <Moon
           size={24}
-          className="absolute rotate-0 scale-100 text-neutral-600 transition-all dark:rotate-90 dark:scale-0"
+          className="absolute rotate-0 scale-100 text-muted-foreground transition-all dark:rotate-90 dark:scale-0"
         />
         <span className="sr-only">Toggle theme</span>
       </div>
 
       <div className="flex flex-col pt-4">
-        <h1 className="text-3xl font-bold">Kentaro Kojima</h1>
-        <p className="text-xl text-neutral-700">Full-Stack Engineer</p>
+        <h1 className="text-3xl font-bold text-foreground">Kentaro Kojima</h1>
+        <p className="text-xl text-foreground">Full-Stack Engineer</p>
       </div>
 
-      <div className="flex items-center gap-2 text-neutral-600">
+      <div className="flex items-center gap-2 text-muted-foreground">
         <svg viewBox="0 0 24 24" fill="none" className="size-5" stroke="currentColor">
           <path
             strokeLinecap="round"
@@ -139,10 +139,10 @@ export function Profile() {
       <div className="flex items-center justify-between">
         <div className="flex gap-2">
           <Link href="https://github.com" target="_blank">
-            <GithubIcon className="size-6 text-neutral-600 hover:text-neutral-900" />
+            <GithubIcon className="size-6 text-muted-foreground hover:text-foreground transition-colors" />
           </Link>
           <Link href="https://linkedin.com" target="_blank">
-            <LinkedinIcon className="size-6 text-neutral-600 hover:text-neutral-900" />
+            <LinkedinIcon className="size-6 text-muted-foreground hover:text-foreground transition-colors" />
           </Link>
         </div>
       </div>
@@ -160,14 +160,14 @@ export function Profile() {
             <div key={item.id} className="flex items-center gap-3">
               <div
                 className={`h-[1.5px] ${isActive(item.id) ? 'w-16' : 'w-8'} ${
-                  isActive(item.id) ? 'bg-neutral-900' : 'bg-neutral-500'
+                  isActive(item.id) ? 'bg-foreground' : 'bg-muted-foreground'
                 } transition-all duration-300`}
               ></div>
               <Link
                 href={`#${item.id}`}
                 className={`block ${
-                  isActive(item.id) ? 'text-neutral-900' : 'text-neutral-500'
-                } font-semibold transition-colors hover:text-neutral-900`}
+                  isActive(item.id) ? 'text-foreground' : 'text-muted-foreground'
+                } font-semibold transition-colors hover:text-foreground`}
               >
                 {item.label}
               </Link>

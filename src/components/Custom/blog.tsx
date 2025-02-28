@@ -82,7 +82,7 @@ export default async function Blog() {
                   </CardHeader>
                   <div className="flex flex-col flex-grow py-6 pr-6">
                     <CardTitle className="text-xl">{post.title}</CardTitle>
-                    <CardDescription className="text-sm text-gray-500">
+                    <CardDescription className="text-sm text-muted-foreground">
                       {format(new Date(post.publishedAt || ''), 'MMMM d, yyyy')}
                     </CardDescription>
                   </div>

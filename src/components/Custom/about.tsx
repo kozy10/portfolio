@@ -5,7 +5,7 @@ export function About() {
   return (
     <Section title="About">
       <div className="flex gap-4">
-        <div className="space-y-4 text-neutral-600 w-3/4">
+        <div className="space-y-4 text-foreground w-3/4">
           <p>
             Full-Stack Engineer with 5 years of experience specializing in TypeScript, Next.js, Go,
             and AWS. Led a 6-member team, managing end-to-end development—from architecture to

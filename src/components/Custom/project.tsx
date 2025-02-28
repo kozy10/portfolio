@@ -23,7 +23,7 @@ const projects: ProjectProps[] = [
     description: 'An AI-powered vocabulary app with visual learning',
     image: '/wordist_page.png',
     tags: ['Next.js App Router', 'Gemini', 'Workers AI'],
-    link: 'https://wordist.net',
+    link: 'https://wordist.net/discover',
   },
   {
     title: 'Portfolio',
@@ -43,7 +43,7 @@ function ProjectCard({ title, description, image, tags, link, githubLink }: Proj
             <h3 className="text-2xl font-bold">{title}</h3>
           </CardHeader>
           <CardContent className="mt-2 p-0">
-            <p className="text-neutral-600">{description}</p>
+            <p className="text-foreground">{description}</p>
             <div className="mt-4 flex flex-wrap gap-2">
               {tags.map((tag) => (
                 <Badge key={tag} variant="secondary">
@@ -68,7 +68,7 @@ function ProjectCard({ title, description, image, tags, link, githubLink }: Proj
           )}
         </CardFooter>
       </div>
-      <div className="flex w-2/5 justify-center bg-neutral-100 p-6">
+      <div className="flex w-2/5 justify-center bg-muted p-6">
         <div className="relative aspect-square w-full">
           <Image src={image} alt={title} fill className="rounded-xl object-contain shadow" />
         </div>

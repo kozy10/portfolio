@@ -31,7 +31,7 @@ interface SkillData {
 const languageSkills: SkillData[] = [
   { icon: SiTypescript, name: 'Typescript', color: '#3178C6' },
   { icon: SiReact, name: 'React', color: '#61DAFB' },
-  { icon: SiNextdotjs, name: 'Next.js' },
+  { icon: SiNextdotjs, name: 'Next.js', color: '#000000' },
   { icon: SiAngular, name: 'Angular.js', color: '#DD0031' },
   { icon: SiGo, name: 'Go', color: '#00ADD8' },
   { icon: SiNodedotjs, name: 'Node.js', color: '#339933' },
@@ -63,12 +63,12 @@ interface SkillIconProps {
 function SkillIcon({ icon: Icon, name, color, className }: SkillIconProps) {
   return (
     <div className="flex w-20 flex-col items-center gap-2">
-      <div className="bg-neutral-50 rounded-xl p-2">
+      <div className="bg-muted rounded-xl p-2">
         <div className={cn('w-12 h-12 flex items-center justify-center rounded-xl', className)}>
           <Icon size={32} color={color} />
         </div>
       </div>
-      <span className="text-xs text-neutral-600">{name}</span>
+      <span className="text-xs text-foreground">{name}</span>
     </div>
   )
 }
@@ -81,7 +81,7 @@ interface SkillGroupProps {
 function SkillGroup({ title, skills }: SkillGroupProps) {
   return (
     <div className="space-y-2">
-      <h3 className="text-base font-semibold text-neutral-900">{title}</h3>
+      <h3 className="text-base font-semibold text-foreground">{title}</h3>
       <div className="flex flex-wrap gap-2">
         {skills.map((skill) => (
           <SkillIcon key={skill.name} icon={skill.icon} name={skill.name} color={skill.color} />

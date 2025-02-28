@@ -68,7 +68,7 @@ export default function Experience() {
             <Image src="/mediado.png" alt="MEDIA DO Co.,Ltd." width={32} height={32} />
             <h3 className="text-xl font-semibold">MEDIA DO Co.,Ltd.</h3>
           </div>
-          <p className="mb-2 mt-1 text-sm text-neutral-600">{`Listed on the Tokyo Stock Exchange's Prime Market, holds the largest share of Japan's digital content distribution market`}</p>
+          <p className="mb-2 mt-1 text-sm text-muted-foreground">{`Listed on the Tokyo Stock Exchange's Prime Market, holds the largest share of Japan's digital content distribution market`}</p>
         </div>
         {experiences.map((exp, index) => (
           <div key={index}>
@@ -77,14 +77,14 @@ export default function Experience() {
                 <AccordionTrigger className="flex justify-between">
                   <div className="flex w-full items-center justify-between pr-2">
                     <div className="text-base font-medium">{exp.role}</div>
-                    <div className="text-neutral-600">{exp.period}</div>
+                    <div className="text-muted-foreground">{exp.period}</div>
                   </div>
                 </AccordionTrigger>
                 <AccordionContent>
                   <div className="pt-4">
                     <ul className="list-disc space-y-3 pl-6">
                       {exp.details.map((detail, detailIndex) => (
-                        <li key={detailIndex} className="text-neutral-600">
+                        <li key={detailIndex} className="text-foreground">
                           {detail}
                         </li>
                       ))}
