@@ -63,7 +63,11 @@ export const Hamburger = () => {
                 <span className="sr-only">Toggle theme</span>
               </Button>
             </div>
-            <Link href="/cv" className="w-full">
+            <Link
+              href="https://drive.google.com/file/d/1YL-jXcGbDkZZB-k3qWm0on8FY7-r0cJ4/view?usp=sharing"
+              target="_blank"
+              className="w-full"
+            >
               <Button className="w-full bg-neutral-900 text-white hover:bg-neutral-800 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-neutral-200">
                 See Resume
               </Button>

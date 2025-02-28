@@ -138,17 +138,17 @@ export function Profile() {
 
       <div className="flex items-center justify-between">
         <div className="flex gap-2">
-          <Link href="https://github.com" target="_blank">
+          <Link href="https://github.com/kozy10" target="_blank">
             <GithubIcon className="size-6 text-muted-foreground hover:text-foreground transition-colors" />
           </Link>
-          <Link href="https://linkedin.com" target="_blank">
+          <Link href="https://www.linkedin.com/in/kentaro-kojima" target="_blank">
             <LinkedinIcon className="size-6 text-muted-foreground hover:text-foreground transition-colors" />
           </Link>
         </div>
       </div>
 
       <Link
-        href="https://drive.google.com/file/d/1V1Zs3AuhLU5h526J_K1YIm05AkRVAm3j/view?usp=sharing"
+        href="https://drive.google.com/file/d/1YL-jXcGbDkZZB-k3qWm0on8FY7-r0cJ4/view?usp=sharing"
         target="_blank"
       >
         <Button className="w-full mt-6">See Resume</Button>

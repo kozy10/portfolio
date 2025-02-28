@@ -23,15 +23,15 @@ export default function Page() {
         <p className="text-2xl text-foreground">Full-Stack Engineer</p>
         <div className="mt-4 flex items-center justify-start gap-8">
           <div className="flex items-center gap-4">
-            <Link href="https://github.com" target="_blank">
+            <Link href="https://github.com/kozy10" target="_blank">
               <GithubIcon className="size-6 text-muted-foreground hover:text-foreground transition-colors" />
             </Link>
-            <Link href="https://linkedin.com" target="_blank">
+            <Link href="https://www.linkedin.com/in/kentaro-kojima/" target="_blank">
               <LinkedinIcon className="size-6 text-muted-foreground hover:text-foreground transition-colors" />
             </Link>
           </div>
           <Link
-            href="https://drive.google.com/file/d/1V1Zs3AuhLU5h526J_K1YIm05AkRVAm3j/view?usp=sharing"
+            href="https://drive.google.com/file/d/1YL-jXcGbDkZZB-k3qWm0on8FY7-r0cJ4/view?usp=sharing"
             target="_blank"
           >
             <Button className="w-40">See Resume</Button>
